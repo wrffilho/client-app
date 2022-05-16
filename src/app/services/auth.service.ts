@@ -45,6 +45,8 @@ export class AuthService {
   }
 
   isAuthenticated() : boolean {
+    console.log("kkdkdk");
+    
     const token = this.obterToken();
     if(token){
       const expired = this.jwtHelper.isTokenExpired(token)
@@ -52,6 +54,8 @@ export class AuthService {
     }
     return false;
   }
+
+
 
   salvar(usuario: Usuario) : Observable<any> {
     return this.http.post<any>(this.apiURL, usuario);
